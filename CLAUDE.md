@@ -23,6 +23,8 @@ This is a PHP-based mock API utility service (`util.devi.tools`) that provides r
 
 Using Makefile:
 ```bash
+make setup     # Create network and start containers
+make network   # Create reverse-proxy network (if not exists)
 make up        # Start containers
 make down      # Stop containers
 make logs      # View container logs

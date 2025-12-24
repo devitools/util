@@ -1,6 +1,12 @@
-.PHONY: up down logs test shell
+.PHONY: up down logs test shell network setup
 
 CONTAINER := app
+NETWORK := reverse-proxy
+
+network:
+	docker network inspect $(NETWORK) >/dev/null 2>&1 || docker network create $(NETWORK)
+
+setup: network up
 
 up:
 	docker-compose up -d
