@@ -1,0 +1,12 @@
+{
+    "name": "devitools/util",
+    "description": "Mock API utility service for testing unreliable external services",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.3"
+    },
+    "scripts": {
+        "test": "php tests/run.php"
+    }
+}
