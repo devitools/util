@@ -1,0 +1,19 @@
+networks:
+  reverse-proxy:
+    external:
+      name: reverse-proxy
+
+services:
+  app:
+    image: webdevops/php-nginx:8.3
+    container_name: util.devi.tools-app
+    restart: always
+    networks:
+      - reverse-proxy
+    volumes:
+      - .:/var/www/app
+    environment:
+      - VIRTUAL_HOST=util.devi.tools
+      - WEB_DOCUMENT_ROOT=/var/www/app/public
+      - LETSENCRYPT_EMAIL=certificate@util.devi.tools
+      - LETSENCRYPT_HOST=util.devi.tools
