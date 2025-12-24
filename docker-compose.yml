@@ -7,6 +7,7 @@ services:
   app:
     image: webdevops/php-nginx:8.3
     container_name: util.devi.tools-app
+    working_dir: /var/www/app
     restart: always
     networks:
       - reverse-proxy
